@@ -1,0 +1,63 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_date_alert
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-29 20:34+0000\n"
+"PO-Revision-Date: 2019-10-29 15:40-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_CO\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#. module: stock_date_alert
+#: model:ir.model.fields,help:stock_date_alert.field_stock_production_lot__alert
+msgid ""
+" 'Alert' -> the expiration date of the product is below 90 days. 'Warning' -"
+"> the expiration date of the product is between 91 and 180 days. 'No Risk' -"
+"> the expiration date of the product is above 181 days. "
+msgstr ""
+"'Alerta' -> la fecha de caducidad del producto es inferior a 90 días. "
+"'Advertencia' -> la fecha de caducidad del producto es entre 91 y 180 días. "
+"'Sin riesgo' -> la fecha de caducidad del producto es superior a 181 días"
+
+#. module: stock_date_alert
+#: model:ir.model.fields,field_description:stock_date_alert.field_stock_production_lot__alert
+msgid "Alert"
+msgstr "Alerta"
+
+#. module: stock_date_alert
+#: model:ir.model,name:stock_date_alert.model_stock_production_lot
+msgid "Lot/Serial"
+msgstr "Lote/Serie"
+
+#. module: stock_date_alert
+#: model:ir.model.fields,field_description:stock_date_alert.field_stock_production_lot__num_days
+msgid "Number of Days"
+msgstr "Número de días"
+
+#. module: stock_date_alert
+#: model:ir.model.fields,help:stock_date_alert.field_stock_production_lot__num_days
+msgid "Number of days for product expiration"
+msgstr "Número de días para el vencimiento del producto"
+
+#. module: stock_date_alert
+#: model:ir.actions.server,name:stock_date_alert.stock_alert_date_validation_lot_cron_ir_actions_server
+#: model:ir.cron,cron_name:stock_date_alert.stock_alert_date_validation_lot_cron
+#: model:ir.cron,name:stock_date_alert.stock_alert_date_validation_lot_cron
+msgid "Stock Production Lot: Alert date Validation"
+msgstr "Lote de producción de stock: Validación de la fecha de alerta"
+
+#. module: stock_date_alert
+#: model:ir.actions.server,name:stock_date_alert.stock_lot_alert_date_exceeded_cron_ir_actions_server
+#: model:ir.cron,cron_name:stock_date_alert.stock_lot_alert_date_exceeded_cron
+#: model:ir.cron,name:stock_date_alert.stock_lot_alert_date_exceeded_cron
+msgid "Stock Production Lot: Alert date exceeded"
+msgstr "Lote de producción de stock: Se ha superado la fecha de alerta"

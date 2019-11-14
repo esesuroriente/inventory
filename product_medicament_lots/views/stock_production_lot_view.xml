@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="product_template_medicament">
+            <field name="name">stock.production.lot.medicament.form</field>
+            <field name="model">stock.production.lot</field>
+            <field name="inherit_id" ref="stock.view_production_lot_form"/>
+            <field name="arch" type="xml">
+              <xpath expr="//group" position="inside">
+                  <group >
+                      <field name="laboratory" placeholder="Laboratory"/>
+                      <field name="register_invima" placeholder="Register INVIMA"/>
+                      <field name="cums" placeholder="CUMS"/>
+                      <field name="consecutive_cums" placeholder="Consecutive CUMS"/>
+                      <field name="manufacturing_date" />
+                  </group>
+              </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

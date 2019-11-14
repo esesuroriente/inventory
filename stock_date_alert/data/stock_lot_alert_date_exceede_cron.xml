@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+	<record model="ir.cron" id="stock_lot_alert_date_exceeded_cron">
+        <field name="name">Stock Production Lot: Alert date exceeded</field>
+        <field name="model_id" ref="model_stock_production_lot"/>
+        <field name="state">code</field>
+        <field name="code">model._alert_date_exceeded()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+    </record>
+</odoo>

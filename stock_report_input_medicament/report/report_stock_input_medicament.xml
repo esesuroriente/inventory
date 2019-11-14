@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+      <record id="stock_picking_xlsx_view" model="ir.ui.view">
+        <field name="name">wizard.report.input.medicament</field>
+        <field name="model">wizard.report.input.medicament</field>
+        <field name="arch" type="xml">
+            <form string="Export report - Inputs Medicaments">
+              <p class="oe_grey">
+                You want to Print Excel Report?
+              </p>
+              <footer>
+                <button string="Print Excel Report" class="btn-primary"
+                    name="action_stock_input_medicament_report" type="object" />
+                <button string="Cancel" class="btn-primary" special="cancel"/>
+              </footer>
+            </form>
+        </field>
+      </record>
+
+
+      <record id="stock_picking_xlsx_out_view" model="ir.ui.view">
+        <field name="name">report.stock.input.medicament.out</field>
+        <field name="model">report.stock.input.medicament</field>
+        <field name="arch" type="xml">
+          <form string="Export report - Inputs Medicaments">
+            <group>
+              <field name="file_name" filename="report_data" />
+              <field name="report_data" invisible="1" />
+            </group>
+            <footer>
+              <button string="Cancel" class="btn-primary" special="cancel"/>
+            </footer>
+          </form>
+        </field>
+      </record>
+
+     <act_window id="action_purchase_excel"
+          name="Export report - Inputs Medicaments"
+          binding_model="stock.picking"
+          res_model="wizard.report.input.medicament"
+          view_mode="form" target="new" />
+</odoo>

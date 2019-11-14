@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_report_stock_input_medicament,report_stock_input_medicament,stock_report_input_medicament.model_report_stock_input_medicament,stock.group_stock_user,1,0,1,0
+access_wizard_report_input_medicament,wizard_report_input_medicament,stock_report_input_medicament.model_wizard_report_input_medicament,stock.group_stock_user,1,0,1,0

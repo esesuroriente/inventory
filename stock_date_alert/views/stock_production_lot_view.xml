@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+      <record id="stock_production_lot_view" model="ir.ui.view">
+          <field name="name">	stock.production.lot.form.fields.view</field>
+          <field name="model">stock.production.lot</field>
+          <field name="inherit_id" ref="product_expiry.view_move_form_expiry"/>
+          <field name="arch" type="xml">
+              <xpath expr="//field[@name='use_date']" position="attributes">
+                   <attribute name="invisible">1</attribute>
+              </xpath>
+              <xpath expr="//field[@name='removal_date']" position="attributes">
+                   <attribute name="invisible">1</attribute>
+              </xpath>
+              <xpath expr="//field[@name='alert_date']" position="after">
+                    <field name="num_days" readonly="1" />
+              </xpath>
+          </field>
+      </record>
+
+      <record id="stock_production_lot_alert_date_form_view" model="ir.ui.view">
+          <field name="name">stock.production.lot.alert.date.form</field>
+          <field name="model">stock.production.lot</field>
+          <field name="inherit_id" ref="stock.view_production_lot_tree"/>
+          <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                  <attribute name="decoration-success"> alert == 'NR' </attribute>
+                  <attribute name="decoration-warning"> alert == 'W' </attribute>
+                  <attribute name="decoration-danger">  alert == 'A' </attribute>
+            </xpath>
+            <xpath expr="//field[@name='company_id']" position="after">
+                  <field name="alert" readonly="1" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='alert_date']" position="after">
+                  <field name="num_days" readonly="1" />
+            </xpath>
+          </field>
+      </record>
+    </data>
+</odoo>

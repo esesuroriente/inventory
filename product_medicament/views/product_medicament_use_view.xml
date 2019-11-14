@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Product Medicament use -->
+        <record id="view_product_medicament_use_tree" model="ir.ui.view">
+            <field name="name">product.medicament.use.tree</field>
+            <field name="model">product.medicament.use</field>
+            <field name="arch" type="xml">
+                <tree string="Partner Titles" editable="bottom">
+                      <field name="name"/>
+                      <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_product_medicament_use_form" model="ir.ui.view">
+            <field name="name">product.medicament.use.form</field>
+            <field name="model">product.medicament.use</field>
+            <field name="arch" type="xml">
+                <form string="Medicament use">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="active"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="product_medicament_use_view_search" model="ir.ui.view">
+            <field name="name">product.medicament.use.view.search</field>
+            <field name="model">product.medicament.use</field>
+            <field name="arch" type="xml">
+                <search string="Search Medicament use">
+                    <field name="name"/>
+                    <field name="display_name"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_product_medicament_use_form" model="ir.actions.act_window">
+                  <field name="name">Medicament use</field>
+                  <field name="type">ir.actions.act_window</field>
+                  <field name="res_model">product.medicament.use</field>
+                  <field name="view_mode">tree,form</field>
+                  <field name="search_view_id" ref="product_medicament_use_view_search"/>
+                  <field name="help" type="html">
+                    <p class="o_view_nocontent_smiling_face">
+                      Create a new Medicament use
+                    </p>
+                  </field>
+        </record>
+
+
+        <menuitem id="menu_action_product_medicament_use_form"
+            name="Medicament use" sequence="50"
+            action="action_product_medicament_use_form"
+            parent="stock.menu_stock_inventory_control" />
+
+    </data>
+</odoo>
