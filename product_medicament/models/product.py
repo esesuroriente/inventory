@@ -10,32 +10,32 @@ class ProductTemplate(models.Model):
 
     active_component = fields.Char(tracking=True)
     storage = fields.Selection([
-                            ('norm', 'Normal'),
-                            ('cold', 'Cadena de frío')],
-                            string='Storage',
-                            tracking=True
-                            )
+                                    ('norm', 'Normal'),
+                                    ('cold', 'Cadena de frío')],
+                                    string='Storage',
+                                    tracking=True
+                                )
 
-    commercial_presentation = fields.Text(tracking=True)
-    individual_presentation = fields.Text(tracking=True)
-    composition = fields.Text(tracking=True)
+    commercial_presentation = fields.Char(tracking=True)
+    individual_presentation = fields.Char(tracking=True)
+    composition = fields.Char(tracking=True)
     notes = fields.Text(tracking=True)
     special_condition = fields.Selection([
-                            ('reg',  'Regulados'),
-                            ('cont', 'Controlados'),
-                            ('both', 'Ambos')],
-                            string='Special Condition',
-                            tracking=True
+                                ('reg',  'Regulados'),
+                                ('cont', 'Controlados'),
+                                ('both', 'Ambos')],
+                                string='Special Condition',
+                                tracking=True
                             )
 
     med_use_id = fields.Many2many('product.medicament.use'
-                                  , string='Medicament use'
-                                  , tracking=True
+                                      , string='Medicament use'
+                                      , tracking=True
                                  )
 
     med_group_id = fields.Many2many('product.medicament.group'
-                                    , string='Group'
-                                    , tracking=True
+                                        , string='Group'
+                                        , tracking=True
                                     )
 
 
