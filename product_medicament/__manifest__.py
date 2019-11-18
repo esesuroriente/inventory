@@ -4,7 +4,7 @@
 
 {
     'name': 'Product Medicament',
-    'version': '13.0.1.0.0-beta.1',
+    'version': '13.0.1.0.0-beta.2',
     'author': 'ESE SURORIENTE CAUCA',
     'license': 'AGPL-3',
     'category': 'Product',
