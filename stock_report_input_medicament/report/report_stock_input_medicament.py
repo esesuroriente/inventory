@@ -79,13 +79,19 @@ class WizardReportInputMedicaments(models.Model):
 
                         product ['product_concent'] = ' '
 
-                        if line.product_id.is_medicament and line.product_id.product_tmpl_id.med_group_id.name:
-                            product ['product_group'] = line.product_id.product_tmpl_id.med_group_id.name
+                        grname = ""
+                        for group in line.product_id.product_tmpl_id.med_group_id:
+                            grname += group.name + ', '
+                        if line.product_id.is_medicament:
+                            product ['product_group'] = grname
                         else:
-                            product ['product_group'] = ''
+                             product ['product_group'] = ''
 
                         if line.product_id.is_medicament and line.product_id.product_tmpl_id.storage:
-                            product ['product_storage'] = line.product_id.product_tmpl_id.storage
+                            if line.product_id.product_tmpl_id.storage == 'norm':
+                                product ['product_storage'] = 'Normal'
+                            else:
+                                product ['product_storage'] = 'Cadena de frío'
                         else:
                             product ['product_storage'] = ''
 
@@ -229,7 +235,7 @@ class WizardReportInputMedicaments(models.Model):
 
                     sheet.write(n,  4, custom_value['partner_id'], style_text)
                     sheet.write(n,  5, custom_value ['vender_invo_num'], style_text)
-                    sheet.write(n,  6, custom_value ['vender_invo_date'], style_text)
+                    sheet.write(n,  6, custom_value ['vender_invo_date'], style_date)
                     sheet.write(n,  8, custom_value ['date_done'], style_date)
 
                     sheet.write(n, 19, ' ', style_text)
