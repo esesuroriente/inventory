@@ -15,15 +15,16 @@
     'website': " ",
     'license': 'AGPL-3',
     'category': 'Warehouse',
-    'version': '13.0.1.0-beta1',
+    'version': '13.0.1.0-beta.2',
     'images':  ['static/description/WarehouseRestrictions.jpg'],
     'depends': ['base'
                 , 'stock'
                ],
     'data': [
         'views/users_view.xml',
+
         'security/security.xml',
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
     ],
     'installable': True,
     'application': False,
