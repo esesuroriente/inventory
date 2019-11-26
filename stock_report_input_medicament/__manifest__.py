@@ -13,7 +13,7 @@
 
         'product_medicament',
         'product_medicament_lots',
-        'stock_extra_fields'
+        'stock_picking_vendor_invoice_fields'
     ],
     'data': [
         'report/report_stock_input_medicament.xml',
