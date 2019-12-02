@@ -11,13 +11,12 @@
                       <field name="laboratory" placeholder="Laboratory"/>
                       <field name="register_invima" placeholder="Register INVIMA"/>
                       <field name="cums" placeholder="CUMS"/>
-                      <field name="consecutive_cums" placeholder="Consecutive CUMS"/>
+                      <field name="cums_consecutive" placeholder="Consecutive CUMS"/>
+                      <field name="cums_status" />
                       <field name="manufacturing_date" />
                   </group>
               </xpath>
             </field>
         </record>
-
-
     </data>
 </odoo>

@@ -4,7 +4,7 @@
 
 {
     'name': 'Product Medicament Lots',
-    'version': '13.0.1.0.0-beta.1',
+    'version': '13.0.1.0.0-beta.2',
     'author': 'ESE SURORIENTE CAUCA',
     'license': 'AGPL-3',
     'category': 'Product',
@@ -13,7 +13,7 @@
     ],
     'data': [
         'security/ir.model.access.csv',
-        
+
         'views/stock_production_lot_view.xml',
     ],
     'installable': True,

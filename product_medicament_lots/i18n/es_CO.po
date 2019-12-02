@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-29 20:59+0000\n"
-"PO-Revision-Date: 2019-10-29 16:01-0500\n"
+"POT-Creation-Date: 2019-12-02 19:44+0000\n"
+"PO-Revision-Date: 2019-12-02 14:46-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,14 +28,14 @@ msgid "Consecutive CUMS"
 msgstr "Consecutivo CUMS"
 
 #. module: product_medicament_lots
-#: model:ir.model.fields,field_description:product_medicament_lots.field_stock_production_lot__consecutive_cums
-msgid "Consecutive Cums"
-msgstr "Consecutivo CUMS"
-
-#. module: product_medicament_lots
 #: model:ir.model.fields,field_description:product_medicament_lots.field_stock_production_lot__cums
 msgid "Cums"
 msgstr "CUMS"
+
+#. module: product_medicament_lots
+#: model:ir.model.fields,field_description:product_medicament_lots.field_stock_production_lot__cums_consecutive
+msgid "Cums Consecutive"
+msgstr "Consecutivo CUMS"
 
 #. module: product_medicament_lots
 #: model:ir.model.fields,field_description:product_medicament_lots.field_stock_production_lot__laboratory
@@ -54,6 +54,16 @@ msgid "Manufacturing Date"
 msgstr "Fecha de fabricación"
 
 #. module: product_medicament_lots
+#: model:ir.model.fields.selection,name:product_medicament_lots.selection__stock_production_lot__cums_status__otro
+msgid "Otros estados"
+msgstr "Otros estados"
+
+#. module: product_medicament_lots
+#: model:ir.model.fields.selection,name:product_medicament_lots.selection__stock_production_lot__cums_status__pfuerza
+msgid "Pérdida de fuerza"
+msgstr "Pérdida de fuerza"
+
+#. module: product_medicament_lots
 #: model_terms:ir.ui.view,arch_db:product_medicament_lots.product_template_medicament
 msgid "Register INVIMA"
 msgstr "Registro INVIMA"
@@ -62,3 +72,23 @@ msgstr "Registro INVIMA"
 #: model:ir.model.fields,field_description:product_medicament_lots.field_stock_production_lot__register_invima
 msgid "Register Invima"
 msgstr "Registro INVIMA"
+
+#. module: product_medicament_lots
+#: model:ir.model.fields.selection,name:product_medicament_lots.selection__stock_production_lot__cums_status__tramite
+msgid "Trámite de renovación"
+msgstr "Trámite de renovación"
+
+#. module: product_medicament_lots
+#: model:ir.model.fields.selection,name:product_medicament_lots.selection__stock_production_lot__cums_status__vencido
+msgid "Vencido"
+msgstr "Vencido"
+
+#. module: product_medicament_lots
+#: model:ir.model.fields.selection,name:product_medicament_lots.selection__stock_production_lot__cums_status__vigente
+msgid "Vigente"
+msgstr "Vigente"
+
+#. module: product_medicament_lots
+#: model:ir.model.fields,field_description:product_medicament_lots.field_stock_production_lot__cums_status
+msgid "cum status"
+msgstr "Estado CUMS"
