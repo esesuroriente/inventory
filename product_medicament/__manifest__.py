@@ -4,7 +4,7 @@
 
 {
     'name': 'Product Medicament',
-    'version': '13.0.1.0.0-beta.2',
+    'version': '13.0.1.0.0-beta.3',
     'author': 'ESE SURORIENTE CAUCA',
     'license': 'AGPL-3',
     'category': 'Product',
@@ -16,7 +16,7 @@
 
         'views/product_template_view.xml',
         'views/product_medicament_use_view.xml',
-        'views/product_medicament_group_view.xml',
+        'views/product_pharmacological_group_view.xml',
     ],
     'installable': True,
     'auto_install': False,

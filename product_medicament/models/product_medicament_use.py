@@ -10,5 +10,5 @@ class ProductMedicamentUse(models.Model):
     active = fields.Boolean(default=True, help="The active field allows you to hide the category without removing it.")
 
     _sql_constraints = [
-        ('name_uniq', 'unique (name)', "Tag name already exists!"),
+        ('name_uniq', 'unique (name)', "Use name already exists!"),
     ]

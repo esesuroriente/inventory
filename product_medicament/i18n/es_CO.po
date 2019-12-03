@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-29 20:55+0000\n"
-"PO-Revision-Date: 2019-10-29 15:56-0500\n"
+"POT-Creation-Date: 2019-12-03 14:48+0000\n"
+"PO-Revision-Date: 2019-12-03 09:51-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,8 +18,8 @@ msgstr ""
 "X-Generator: Poedit 2.2.4\n"
 
 #. module: product_medicament
-#: model:ir.model.fields,field_description:product_medicament.field_product_medicament_group__active
 #: model:ir.model.fields,field_description:product_medicament.field_product_medicament_use__active
+#: model:ir.model.fields,field_description:product_medicament.field_product_pharmacological_group__active
 msgid "Active"
 msgstr "Activo"
 
@@ -35,13 +35,27 @@ msgid "Active component"
 msgstr "Componente Activo"
 
 #. module: product_medicament
-#: model_terms:ir.ui.view,arch_db:product_medicament.product_medicament_group_view_search
+#: model:ir.model.fields.selection,name:product_medicament.selection__product_template__special_condition__both
+msgid "Ambos"
+msgstr "Ambos"
+
+#. module: product_medicament
 #: model_terms:ir.ui.view,arch_db:product_medicament.product_medicament_use_view_search
+#: model_terms:ir.ui.view,arch_db:product_medicament.product_pharmacological_group_view_search
 msgid "Archived"
 msgstr "Archivado"
 
 #. module: product_medicament
-#: model:ir.model.fields,field_description:product_medicament.field_product_medicament_group__color
+#: model:ir.model.fields.selection,name:product_medicament.selection__product_template__storage__cold
+msgid "Cadena de frío de 2ºC a 8ºC"
+msgstr "Cadena de frío de 2ºC a 8ºC"
+
+#. module: product_medicament
+#: model:ir.model.fields,field_description:product_medicament.field_product_pharmacological_group__child_id
+msgid "Child Group"
+msgstr "Grupo Hijo"
+
+#. module: product_medicament
 #: model:ir.model.fields,field_description:product_medicament.field_product_medicament_use__color
 msgid "Color Index"
 msgstr "Índice de Colores"
@@ -54,16 +68,21 @@ msgid "Commercial Presentation"
 msgstr "Presentación Comercial"
 
 #. module: product_medicament
-#: model:ir.model.fields,field_description:product_medicament.field_product_product__composition
-#: model:ir.model.fields,field_description:product_medicament.field_product_template__composition
-#: model_terms:ir.ui.view,arch_db:product_medicament.product_template_medicament
-msgid "Composition"
-msgstr "Composición"
+#: model:ir.model.fields,field_description:product_medicament.field_product_pharmacological_group__complete_name
+msgid "Complete Name"
+msgstr "Nombre completo"
 
 #. module: product_medicament
-#: model_terms:ir.actions.act_window,help:product_medicament.action_product_medicament_group_form
-msgid "Create a new Medicament group"
-msgstr "Crear un nuevo grupo de Medicamentos"
+#: model:ir.model.fields,field_description:product_medicament.field_product_product__concentration
+#: model:ir.model.fields,field_description:product_medicament.field_product_template__concentration
+#: model_terms:ir.ui.view,arch_db:product_medicament.product_template_medicament
+msgid "Concentration"
+msgstr "Concentración"
+
+#. module: product_medicament
+#: model:ir.model.fields.selection,name:product_medicament.selection__product_template__special_condition__cont
+msgid "Controlados"
+msgstr "Controlados"
 
 #. module: product_medicament
 #: model_terms:ir.actions.act_window,help:product_medicament.action_product_medicament_use_form
@@ -71,37 +90,41 @@ msgid "Create a new Medicament use"
 msgstr "Crear un nuevo uso de Medicamentos"
 
 #. module: product_medicament
-#: model:ir.model.fields,field_description:product_medicament.field_product_medicament_group__create_uid
+#: model_terms:ir.actions.act_window,help:product_medicament.action_product_pharmacological_group_form
+msgid "Create a new pharmacological group"
+msgstr "Crear un nuevo grupo farmacológico"
+
+#. module: product_medicament
 #: model:ir.model.fields,field_description:product_medicament.field_product_medicament_use__create_uid
+#: model:ir.model.fields,field_description:product_medicament.field_product_pharmacological_group__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: product_medicament
-#: model:ir.model.fields,field_description:product_medicament.field_product_medicament_group__create_date
 #: model:ir.model.fields,field_description:product_medicament.field_product_medicament_use__create_date
+#: model:ir.model.fields,field_description:product_medicament.field_product_pharmacological_group__create_date
 msgid "Created on"
 msgstr "Creado"
 
 #. module: product_medicament
-#: model:ir.model.fields,field_description:product_medicament.field_product_medicament_group__display_name
 #: model:ir.model.fields,field_description:product_medicament.field_product_medicament_use__display_name
+#: model:ir.model.fields,field_description:product_medicament.field_product_pharmacological_group__display_name
 msgid "Display Name"
 msgstr "Nombre Público"
 
 #. module: product_medicament
-#: model:ir.model.fields,field_description:product_medicament.field_product_product__med_group_id
-#: model:ir.model.fields,field_description:product_medicament.field_product_template__med_group_id
-msgid "Group"
-msgstr "Grupo"
-
-#. module: product_medicament
-#: model:ir.model.constraint,message:product_medicament.constraint_product_medicament_group_name_uniq
+#: model:ir.model.constraint,message:product_medicament.constraint_product_pharmacological_group_name_uniq
 msgid "Group already exists!"
 msgstr "¡El grupo ya existe!"
 
 #. module: product_medicament
-#: model:ir.model.fields,field_description:product_medicament.field_product_medicament_group__id
+#: model_terms:ir.ui.view,arch_db:product_medicament.view_product_pharmacological_group_tree
+msgid "Grupo"
+msgstr "Grupo Farmacológico"
+
+#. module: product_medicament
 #: model:ir.model.fields,field_description:product_medicament.field_product_medicament_use__id
+#: model:ir.model.fields,field_description:product_medicament.field_product_pharmacological_group__id
 msgid "ID"
 msgstr ""
 
@@ -120,20 +143,20 @@ msgid "Is Medicament"
 msgstr "Es medicamento"
 
 #. module: product_medicament
-#: model:ir.model.fields,field_description:product_medicament.field_product_medicament_group____last_update
 #: model:ir.model.fields,field_description:product_medicament.field_product_medicament_use____last_update
+#: model:ir.model.fields,field_description:product_medicament.field_product_pharmacological_group____last_update
 msgid "Last Modified on"
 msgstr "Última Modificación el"
 
 #. module: product_medicament
-#: model:ir.model.fields,field_description:product_medicament.field_product_medicament_group__write_uid
 #: model:ir.model.fields,field_description:product_medicament.field_product_medicament_use__write_uid
+#: model:ir.model.fields,field_description:product_medicament.field_product_pharmacological_group__write_uid
 msgid "Last Updated by"
 msgstr "Actualizado por"
 
 #. module: product_medicament
-#: model:ir.model.fields,field_description:product_medicament.field_product_medicament_group__write_date
 #: model:ir.model.fields,field_description:product_medicament.field_product_medicament_use__write_date
+#: model:ir.model.fields,field_description:product_medicament.field_product_pharmacological_group__write_date
 msgid "Last Updated on"
 msgstr "Actualizado"
 
@@ -141,15 +164,6 @@ msgstr "Actualizado"
 #: model:ir.model.fields,field_description:product_medicament.field_product_medicament_use__name
 msgid "Medicament Use"
 msgstr "Uso medicamento"
-
-#. module: product_medicament
-#: model:ir.actions.act_window,name:product_medicament.action_product_medicament_group_form
-#: model:ir.model.fields,field_description:product_medicament.field_product_medicament_group__name
-#: model:ir.ui.menu,name:product_medicament.menu_action_product_medicament_group_form
-#: model_terms:ir.ui.view,arch_db:product_medicament.view_product_medicament_group_form
-#: model_terms:ir.ui.view,arch_db:product_medicament.view_product_medicament_group_tree
-msgid "Medicament group"
-msgstr "Grupo medicamento"
 
 #. module: product_medicament
 #: model:ir.actions.act_window,name:product_medicament.action_product_medicament_use_form
@@ -166,6 +180,11 @@ msgid "Medicaments"
 msgstr "Medicamentos"
 
 #. module: product_medicament
+#: model:ir.model.fields.selection,name:product_medicament.selection__product_template__storage__norm
+msgid "Normal de 15ºC a 30ºC. Humedad entre 25% a 70%"
+msgstr "Normal de 15ºC a 30ºC. Humedad entre 25% a 70%"
+
+#. module: product_medicament
 #: model:ir.model.fields,field_description:product_medicament.field_product_product__notes
 #: model:ir.model.fields,field_description:product_medicament.field_product_template__notes
 #: model_terms:ir.ui.view,arch_db:product_medicament.product_template_medicament
@@ -173,14 +192,29 @@ msgid "Notes"
 msgstr "Notas"
 
 #. module: product_medicament
+#: model:ir.model.fields,field_description:product_medicament.field_product_pharmacological_group__parent_id
+msgid "Parent Group"
+msgstr "Grupo Padre"
+
+#. module: product_medicament
 #: model_terms:ir.ui.view,arch_db:product_medicament.view_product_medicament_use_tree
 msgid "Partner Titles"
 msgstr "Formas jurídicas de empresa"
 
 #. module: product_medicament
-#: model:ir.model,name:product_medicament.model_product_medicament_group
-msgid "Product Medicament Group    "
-msgstr "Grupo medicamento"
+#: model:ir.model.fields,field_description:product_medicament.field_product_product__med_group_id
+#: model:ir.model.fields,field_description:product_medicament.field_product_template__med_group_id
+msgid "Pharmacological Group"
+msgstr "Grupo farmacológico"
+
+#. module: product_medicament
+#: model:ir.actions.act_window,name:product_medicament.action_product_pharmacological_group_form
+#: model:ir.model.fields,field_description:product_medicament.field_product_pharmacological_group__name
+#: model:ir.ui.menu,name:product_medicament.menu_action_product_pharmacological_group_form
+#: model_terms:ir.ui.view,arch_db:product_medicament.view_product_pharmacological_group_form
+#: model_terms:ir.ui.view,arch_db:product_medicament.view_product_pharmacological_group_tree
+msgid "Pharmacological group"
+msgstr "Grupo farmacológico"
 
 #. module: product_medicament
 #: model:ir.model,name:product_medicament.model_product_medicament_use
@@ -188,19 +222,29 @@ msgid "Product Medicament Use"
 msgstr "Uso de Medicamento"
 
 #. module: product_medicament
+#: model:ir.model,name:product_medicament.model_product_pharmacological_group
+msgid "Product Pharmacological Group    "
+msgstr "Grupo farmacológico para producto"
+
+#. module: product_medicament
 #: model:ir.model,name:product_medicament.model_product_template
 msgid "Product Template"
 msgstr "Plantilla del Producto"
 
 #. module: product_medicament
-#: model_terms:ir.ui.view,arch_db:product_medicament.product_medicament_group_view_search
-msgid "Search Medicament group"
-msgstr "Buscar uso de medicamentos"
+#: model:ir.model.fields.selection,name:product_medicament.selection__product_template__special_condition__reg
+msgid "Regulados"
+msgstr "Regulados"
 
 #. module: product_medicament
 #: model_terms:ir.ui.view,arch_db:product_medicament.product_medicament_use_view_search
 msgid "Search Medicament use"
 msgstr "Buscar uso de medicamentos"
+
+#. module: product_medicament
+#: model_terms:ir.ui.view,arch_db:product_medicament.product_pharmacological_group_view_search
+msgid "Search Pharmacological group"
+msgstr "Buscar grupo farmacológico"
 
 #. module: product_medicament
 #: model:ir.model.fields,field_description:product_medicament.field_product_product__special_condition
@@ -215,12 +259,12 @@ msgid "Storage"
 msgstr "Almacenaje"
 
 #. module: product_medicament
-#: model:ir.model.constraint,message:product_medicament.constraint_product_medicament_use_name_uniq
-msgid "Tag name already exists!"
-msgstr "¡El nombre de la etiqueta ya existe!"
-
-#. module: product_medicament
-#: model:ir.model.fields,help:product_medicament.field_product_medicament_group__active
 #: model:ir.model.fields,help:product_medicament.field_product_medicament_use__active
+#: model:ir.model.fields,help:product_medicament.field_product_pharmacological_group__active
 msgid "The active field allows you to hide the category without removing it."
 msgstr "El campo activo le permite ocultar la categoría sin eliminarla."
+
+#. module: product_medicament
+#: model:ir.model.constraint,message:product_medicament.constraint_product_medicament_use_name_uniq
+msgid "Use name already exists!"
+msgstr "¡El nombre de la etiqueta ya existe!"
