@@ -2,14 +2,14 @@
 <odoo>
     <data>
         <record id="product_template_form_view" model="ir.ui.view">
-            <field name="name">stock.picking.invoice.vendor.form</field>
+            <field name="name">stock.picking.vendor.remission.form</field>
             <field name="model">stock.picking</field>
             <field name="inherit_id" ref="stock.view_picking_form" />
             <field name="arch" type="xml">
                 <xpath expr="//group[@name='other_infos']" position="after">
-                    <group string="Vendor Invoice Information" name="invoice_vendor_info">
-                        <field name="vendor_invoice_date" />
-                        <field name="vendor_invoice_number" />
+                    <group string="Vendor Remission Information" name="vendor_remission_info">
+                        <field name="vendor_remission_date" />
+                        <field name="vendor_remission_number" />
                     </group>
                 </xpath>
             </field>
