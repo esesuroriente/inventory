@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 from odoo import fields, models
 
@@ -18,4 +19,4 @@ class ProductTemplate(models.Model):
                                       tracking=True
                                 )
 
-    manufacturing_date = fields.Datetime(tracking=True)
+    manufacturing_date = fields.Date(tracking=True)
