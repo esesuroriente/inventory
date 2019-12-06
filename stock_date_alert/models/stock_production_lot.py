@@ -12,8 +12,9 @@ class StockProductionLot(models.Model):
         help=" 'Alert' -> the expiration date of the product is below 90 days. "+
         "'Warning' -> the expiration date of the product is between 91 and 180 days. " +
         "'No Risk' -> the expiration date of the product is above 181 days. "
+        , store=True
         )
-    num_days = fields.Integer(  #compute='_calculate_dif_date',
+    num_days = fields.Integer(
         string='Number of Days',
         help='Number of days for product expiration')
 
@@ -27,6 +28,18 @@ class StockProductionLot(models.Model):
         current_date = fields.Datetime.now()
         if self.life_date:
             self.num_days = (self.life_date - current_date).days
+            self.alert = self._alert_calc(self.num_days)
+
+
+    def _alert_calc(self, dif):
+        if  dif <= 90:
+            alert = 'A'
+        if 90 < dif <= 180:
+            alert = 'W'
+        if dif > 180:
+            alert = 'NR'
+        return alert
+
 
     @api.model
     def _alert_date_validation(self):
@@ -36,13 +49,7 @@ class StockProductionLot(models.Model):
 
         for alert_lots in lots:
             dif = (alert_lots.life_date - current_date).days
-
-            if  dif <= 90:
-                alert = 'A'
-            if 90 < dif <= 180:
-                alert = 'W'
-            if dif > 180:
-                alert = 'NR'
+            alert = self._alert_calc(dif)
 
             alert_lots.write({
             'alert': alert ,

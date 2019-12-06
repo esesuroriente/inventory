@@ -13,7 +13,10 @@
                    <attribute name="invisible">1</attribute>
               </xpath>
               <xpath expr="//field[@name='alert_date']" position="after">
-                    <field name="num_days" readonly="1" />
+                    <field name="num_days" readonly="1" force_save="1" />
+              </xpath>
+              <xpath expr="//field[@name='num_days']" position="after">
+                    <field name="alert" invisible="1" force_save="1" />
               </xpath>
           </field>
       </record>
