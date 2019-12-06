@@ -5,12 +5,13 @@
 
 {
     'name': 'Report Stock Quantity out',
-    'version': '13.0.1.0.0-beta.1',
+    'version': '13.0.1.0.0-beta.2',
     'author': 'ESE SURORIENTE CAUCA, Odoo',
     'license': 'AGPL-3',
     'category': 'Stock',
     'depends': [
-        'stock'
+          'stock'
+        , 'stock_picking_movement_type'
     ],
     'data': [
         'security/ir.model.access.csv',

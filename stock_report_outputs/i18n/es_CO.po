@@ -1,0 +1,179 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_report_outputs
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-06 22:28+0000\n"
+"PO-Revision-Date: 2019-12-06 17:34-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_CO\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs__company_id
+msgid "Company"
+msgstr "Compañia"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs__date
+#: model_terms:ir.ui.view,arch_db:stock_report_outputs.view_report_stock_quantity_outputs_search
+msgid "Date"
+msgstr "Fecha"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields.selection,name:stock_report_outputs.selection__report_stock_quantity_outputs__movement_type__devol
+msgid "Devolución"
+msgstr "Devolución"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs__display_name
+msgid "Display Name"
+msgstr "Nombre Público"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs__location_id
+msgid "From"
+msgstr "Desde"
+
+#. module: stock_report_outputs
+#: model_terms:ir.ui.view,arch_db:stock_report_outputs.view_report_stock_quantity_outputs_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs__id
+msgid "ID"
+msgstr "ID"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields.selection,name:stock_report_outputs.selection__report_stock_quantity_outputs__state__in
+msgid "In"
+msgstr "Entrada"
+
+#. module: stock_report_outputs
+#: model:ir.actions.act_window,name:stock_report_outputs.action_report_stock_quantity_outputs
+#: model:ir.ui.menu,name:stock_report_outputs.menu_quantity_by_location
+#: model_terms:ir.ui.view,arch_db:stock_report_outputs.view_report_stock_quantity_outputs_form
+#: model_terms:ir.ui.view,arch_db:stock_report_outputs.view_report_stock_quantity_outputs_pivot
+#: model_terms:ir.ui.view,arch_db:stock_report_outputs.view_report_stock_quantity_outputs_search
+#: model_terms:ir.ui.view,arch_db:stock_report_outputs.view_report_stock_quantity_outputs_tree
+msgid "Inventory Out"
+msgstr "Salida de Inventario"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs____last_update
+msgid "Last Modified on"
+msgstr "Última Modificación el"
+
+#. module: stock_report_outputs
+#: model_terms:ir.ui.view,arch_db:stock_report_outputs.view_report_stock_quantity_outputs_search
+msgid "Location Destination"
+msgstr "Ubicación de destino"
+
+#. module: stock_report_outputs
+#: model_terms:ir.ui.view,arch_db:stock_report_outputs.view_report_stock_quantity_outputs_search
+msgid "Location Source"
+msgstr "Ubicación de origen"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs__move_ids
+msgid "Move"
+msgstr "Movimiento"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs__movement_type
+msgid "Movement type"
+msgstr "Tipo de Movimiento"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields.selection,name:stock_report_outputs.selection__report_stock_quantity_outputs__state__out
+msgid "Out"
+msgstr "Salida"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs__uom_po_qty
+#: model_terms:ir.ui.view,arch_db:stock_report_outputs.view_report_stock_quantity_outputs_tree
+msgid "PO Quantity"
+msgstr "Cantidad de Compra"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs__uom_po_id
+msgid "PO UoM"
+msgstr "Unidad de medida de compra"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs__product_id
+#: model_terms:ir.ui.view,arch_db:stock_report_outputs.view_report_stock_quantity_outputs_search
+msgid "Product"
+msgstr "Producto"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs__categ_id
+#: model_terms:ir.ui.view,arch_db:stock_report_outputs.view_report_stock_quantity_outputs_search
+msgid "Product Category"
+msgstr "Categoría de producto"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs__product_tmpl_id
+msgid "Product Template"
+msgstr "Plantilla del Producto"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields.selection,name:stock_report_outputs.selection__report_stock_quantity_outputs__movement_type__prest
+msgid "Préstamo"
+msgstr "Préstamo"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs__product_qty
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: stock_report_outputs
+#: model_terms:ir.ui.view,arch_db:stock_report_outputs.view_report_stock_quantity_outputs_form
+#: model_terms:ir.ui.view,arch_db:stock_report_outputs.view_report_stock_quantity_outputs_tree
+msgid "Quantity Done"
+msgstr "Cantidad hecha"
+
+#. module: stock_report_outputs
+#: model:ir.model,name:stock_report_outputs.model_report_stock_quantity_outputs
+msgid "Quantity Report Stock Outputs"
+msgstr "Salidas de inventario - informe de cantidades"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs__reference
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields.selection,name:stock_report_outputs.selection__report_stock_quantity_outputs__movement_type__rote
+msgid "Rote"
+msgstr "Rote"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs__state
+msgid "State"
+msgstr "Estado"
+
+#. module: stock_report_outputs
+#: model_terms:ir.actions.act_window,help:stock_report_outputs.action_report_stock_quantity_outputs
+msgid "There's no product move yet"
+msgstr "No hay movimientos de productos aún"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs__location_dest_id
+msgid "To"
+msgstr "Para"
+
+#. module: stock_report_outputs
+#: model:ir.model.fields,field_description:stock_report_outputs.field_report_stock_quantity_outputs__warehouse_id
+#: model_terms:ir.ui.view,arch_db:stock_report_outputs.view_report_stock_quantity_outputs_search
+msgid "Warehouse"
+msgstr "Almacén"
