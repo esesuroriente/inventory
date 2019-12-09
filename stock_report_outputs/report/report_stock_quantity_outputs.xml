@@ -15,12 +15,13 @@
                 <field name="product_id"/>
                 <field name="product_qty"  string="Quantity Done"/>
                 <field name="uom_po_qty"   string="PO Quantity"/>
+                <field name="uom_po_id"   string="Unidad de Compra" optional="hide"/>
                 <field name="reference"    optional="show"/>
                 <field name="location_id"  optional="show"/>
                 <field name="location_dest_id"   optional="show"/>
                 <field name="warehouse_id"  optional="show"/>
                 <field name="movement_type" optional="show"/>
-                <field name="company_id"   groups="base.group_multi_company"  optional="hide"/>
+                <field name="company_id"    invisible="1"/>
                 <field name="state"        invisible="1"/>
             </tree>
         </field>
@@ -106,8 +107,14 @@
 
     <menuitem id="menu_quantity_by_location"
             name="Inventory Out"
-            parent="stock.menu_stock_inventory_control"
+            parent="stock.menu_warehouse_report"
             action="action_report_stock_quantity_outputs"
     />
+    <!-- parent="stock.menu_stock_inventory_control" -->
 
+    <menuitem id="stock.menu_warehouse_report"
+              name="Reporting"
+              sequence="99"
+              parent="stock.menu_stock_root"
+              groups="stock.group_stock_user"/>
 </odoo>
