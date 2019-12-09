@@ -21,6 +21,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
             </form>
         </field>
     </record>
+
     <record id="action_stock_report_quantity_by_location_prepare" model="ir.actions.act_window">
         <field name="name">Inventory By Location</field>
         <field name="res_model">stock.report.quantity.by.location.prepare</field>
@@ -28,10 +29,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
         <field name="view_id" ref="stock_report_quantity_by_location_prepare_form_view"/>
         <field name="target">new</field>
     </record>
-    <menuitem id="menu_quantity_by_location" name="Inventory by Location"
+
+    <menuitem id="menu_quantity_by_location"
+              name="Inventory by Location"
               parent="stock.menu_warehouse_report"
               action="action_stock_report_quantity_by_location_prepare"
-              groups="stock.group_stock_user"/>
+              />
 
     <record id="stock_report_quantity_by_location_tree_view" model="ir.ui.view">
         <field name="name">Stock Report Quantity By Location Form</field>
