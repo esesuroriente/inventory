@@ -32,5 +32,51 @@
             <field name="perm_unlink" eval="False"/>
         </record>
 
+        <record id="filter_user_stock_quant_allowed" model="ir.rule">
+            <field name="name">Filter Stock Quant Allowed </field>
+            <field name="model_id" search="[('model','=','stock.quant')]" model="ir.model"/>
+            <field name="groups" eval="[(4, ref('group_restrict_warehouse'))]"/>
+            <field name="domain_force">[ ('location_id','in', [ p.id for p in user.stock_location_ids ])
+                                        ]
+            </field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record id="filter_user_stock_move_line_allowed" model="ir.rule">
+            <field name="name">Filter Stock Quant Allowed </field>
+            <field name="model_id" search="[('model','=','stock.move.line')]" model="ir.model"/>
+            <field name="groups" eval="[(4, ref('group_restrict_warehouse'))]"/>
+            <field name="domain_force">['|'
+                                          , ('location_dest_id','in', [ p.id for p in user.stock_location_ids ])
+                                          , ('location_id','in', [ p.id for p in user.stock_location_ids ])
+                                        ]
+            </field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+
+<!-- Specific modules -->
+        <record id="filter_user_report_stock_quantity_outputs_allowed" model="ir.rule">
+            <field name="name">Filter report.stock.quantity.outputs Allowed </field>
+            <field name="model_id" search="[('model','=','report.stock.quantity.outputs')]" model="ir.model"/>
+            <field name="groups" eval="[(4, ref('group_restrict_warehouse'))]"/>
+            <field name="domain_force">['|'
+                                          , ('location_dest_id','in', [ p.id for p in user.stock_location_ids ])
+                                          , ('location_id','in', [ p.id for p in user.stock_location_ids ])
+                                        ]
+            </field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+
     </data>
 </odoo>
