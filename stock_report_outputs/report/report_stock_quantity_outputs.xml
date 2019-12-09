@@ -105,7 +105,7 @@
           </field>
     </record>
 
-    <menuitem id="menu_quantity_by_location"
+    <menuitem id="menu_quantity_outputs"
             name="Inventory Out"
             parent="stock.menu_warehouse_report"
             action="action_report_stock_quantity_outputs"
