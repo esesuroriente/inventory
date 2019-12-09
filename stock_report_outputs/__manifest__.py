@@ -5,7 +5,7 @@
 
 {
     'name': 'Report Stock Quantity out',
-    'version': '13.0.1.0.0-beta.3',
+    'version': '13.0.1.0.0-beta.4',
     'author': 'ESE SURORIENTE CAUCA, Odoo',
     'license': 'AGPL-3',
     'category': 'Stock',
