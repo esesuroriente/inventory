@@ -5,15 +5,24 @@
         <field name="name">report.stock.quantity.outputs.tree</field>
         <field name="model">report.stock.quantity.outputs</field>
         <field name="arch" type="xml">
-            <tree decoration-muted="state == 'cancel'" decoration-danger="(state not in ('cancel','done'))" string="Inventory Out" create="0" default_order="date">
+            <tree decoration-danger="state == 'in'"
+                  decoration-info="state == 'out'"
+                  string="Inventory Out"
+                  create="0"
+                  default_order="date"
+                  editable="bottom">
                 <field name="date"/>
                 <field name="product_id"/>
-                <field name="product_qty" string="Quantity Done"/>
-                <field name="state" invisible="1"/>
-                <field name="location_id"/>
-                <field name="location_dest_id"/>
-                <field name="warehouse_id"/>
-                <field name="company_id" groups="base.group_multi_company" force_save="1"/>
+                <field name="product_qty"  string="Quantity Done"/>
+                <field name="uom_po_qty"   string="PO Quantity"/>
+                <field name="uom_po_id"   string="Unidad de Compra" optional="hide"/>
+                <field name="reference"    optional="show"/>
+                <field name="location_id"  optional="show"/>
+                <field name="location_dest_id"   optional="show"/>
+                <field name="warehouse_id"  optional="show"/>
+                <field name="movement_type" optional="show"/>
+                <field name="company_id"    invisible="1"/>
+                <field name="state"        invisible="1"/>
             </tree>
         </field>
     </record>
@@ -98,8 +107,14 @@
 
     <menuitem id="menu_quantity_by_location"
             name="Inventory Out"
-            parent="stock.menu_stock_inventory_control"
+            parent="stock.menu_warehouse_report"
             action="action_report_stock_quantity_outputs"
     />
+    <!-- parent="stock.menu_stock_inventory_control" -->
 
+    <menuitem id="stock.menu_warehouse_report"
+              name="Reporting"
+              sequence="99"
+              parent="stock.menu_stock_root"
+              groups="stock.group_stock_user"/>
 </odoo>
