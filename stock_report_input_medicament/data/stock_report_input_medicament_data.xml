@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="seq_report_stock_input_medicament_alm" model="ir.sequence">
+            <field name="name">report.stock.input.medicament.alm</field>
+            <field name="code">report.stock.input.medicament.alm</field>
+            <field name="prefix">ESE-</field>
+            <field name="padding">3</field>
+        </record>
+    </data>
+
+    <data>
+         <record id="seq_report_stock_input_medicament_lveg" model="ir.sequence">
+            <field name="name">report.stock.input.medicament.lveg</field>
+            <field name="code">report.stock.input.medicament.lveg</field>
+            <field name="prefix">ESE-</field>
+            <field name="padding">3</field>
+        </record>
+    </data>
+
+    <data>
+         <record id="seq_report_stock_input_medicament_sseb" model="ir.sequence">
+            <field name="name">report.stock.input.medicament.sseb</field>
+            <field name="code">report.stock.input.medicament.sseb</field>
+            <field name="prefix">ESE-</field>
+            <field name="padding">3</field>
+        </record>
+    </data>
+
+    <data>
+         <record id="seq_report_stock_input_medicament_srosa" model="ir.sequence">
+            <field name="name">report.stock.input.medicament.srosa</field>
+            <field name="code">report.stock.input.medicament.srosa</field>
+            <field name="prefix">ESE-</field>
+            <field name="padding">3</field>
+        </record>
+    </data>
+
+    <data>
+         <record id="seq_report_stock_input_medicament_sjvl" model="ir.sequence">
+            <field name="name">report.stock.input.medicament.sjvl</field>
+            <field name="code">report.stock.input.medicament.sjvl</field>
+            <field name="prefix">ESE-</field>
+            <field name="padding">3</field>
+        </record>
+    </data>
+
+</odoo>
