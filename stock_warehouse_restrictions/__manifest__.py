@@ -15,13 +15,14 @@
     'website': " ",
     'license': 'AGPL-3',
     'category': 'Warehouse',
-    'version': '13.0.1.0.0-beta.2',
+    'version': '13.0.1.0.0-beta.3',
     'images':  ['static/description/WarehouseRestrictions.jpg'],
     'depends': ['base'
                 , 'stock'
 
                 # Specific modules
                 , 'stock_report_outputs'
+                , 'purchase'
                ],
     'data': [
         'views/users_view.xml',
