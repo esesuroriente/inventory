@@ -62,6 +62,18 @@
 
 
 <!-- Specific modules -->
+        <record id="filter_user_stock_purchase_order_allowed" model="ir.rule">
+            <field name="name">Filter stock purchase order Allowed </field>
+            <field name="model_id" search="[('model','=','purchase.order')]" model="ir.model"/>
+            <field name="groups" eval="[(4, ref('group_restrict_warehouse'))]"/>
+            <field name="domain_force">[('picking_type_id','in', [ p.id for p in user.default_picking_type_ids  ])  ]
+            </field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
         <record id="filter_user_report_stock_quantity_outputs_allowed" model="ir.rule">
             <field name="name">Filter report.stock.quantity.outputs Allowed </field>
             <field name="model_id" search="[('model','=','report.stock.quantity.outputs')]" model="ir.model"/>
