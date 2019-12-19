@@ -15,7 +15,7 @@
     'website': " ",
     'license': 'AGPL-3',
     'category': 'Warehouse',
-    'version': '13.0.1.0.0-beta.3',
+    'version': '13.0.1.0.0-beta.4',
     'images':  ['static/description/WarehouseRestrictions.jpg'],
     'depends': ['base'
                 , 'stock'
