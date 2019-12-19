@@ -44,6 +44,7 @@ class ReportStockQuantityOutputs(models.Model):
         query = """
 CREATE or REPLACE VIEW report_stock_quantity_outputs
     AS (
+
 SELECT
     m.id,
     product_id,
@@ -63,8 +64,9 @@ SELECT
     END AS warehouse_id
 
     , CASE
-        WHEN (ls.usage = 'internal' AND ls.company_id IS NOT NULL) AND ld.usage = 'customer'  THEN  (m.product_qty * product_uom.factor)::decimal(16,3)
-        WHEN  ls.usage = 'customer' AND (ld.usage = 'internal' AND ld.company_id IS NOT NULL) THEN -(m.product_qty * product_uom.factor)::decimal(16,3)
+--        WHEN (ls.usage = 'internal' AND ls.company_id IS NOT NULL) AND ld.usage = 'customer'  THEN  (m.product_qty * product_uom.factor)::decimal(16,2)
+        WHEN (ls.usage = 'internal' AND ls.company_id IS NOT NULL) AND ld.usage = 'customer'  THEN  ROUND((m.product_qty * product_uom.factor)::decimal(16,1))
+        WHEN  ls.usage = 'customer' AND (ld.usage = 'internal' AND ld.company_id IS NOT NULL) THEN -ROUND((m.product_qty * product_uom.factor)::decimal(16,1))
     END AS uom_po_qty
     , pt.uom_po_id
 
@@ -120,8 +122,8 @@ SELECT
     CASE
 	WHEN  ls.usage = 'internal' AND (ld.usage = 'transit' AND ld.company_id IS NOT NULL) THEN 0
         WHEN (ls.usage = 'transit'  AND ls.company_id IS NOT NULL) AND ld.usage = 'internal' AND movement_type = 'rote'  THEN 0
-        WHEN (ls.usage = 'transit'  AND ls.company_id IS NOT NULL) AND ld.usage = 'internal' AND movement_type = 'prest' THEN (m.product_qty * product_uom.factor)::decimal(16,3)
-        WHEN (ls.usage = 'transit'  AND ls.company_id IS NOT NULL) AND ld.usage = 'internal' AND movement_type = 'devol' THEN (m.product_qty * product_uom.factor)::decimal(16,3)
+        WHEN (ls.usage = 'transit'  AND ls.company_id IS NOT NULL) AND ld.usage = 'internal' AND movement_type = 'prest' THEN ROUND((m.product_qty * product_uom.factor)::decimal(16,1))
+        WHEN (ls.usage = 'transit'  AND ls.company_id IS NOT NULL) AND ld.usage = 'internal' AND movement_type = 'devol' THEN ROUND((m.product_qty * product_uom.factor)::decimal(16,1))
     END AS uom_po_qty
 
     , pt.uom_po_id
@@ -149,6 +151,8 @@ WHERE
  	    OR
  	    (ls.usage = 'internal' AND (ld.usage = 'transit' AND ld.company_id IS NOT NULL))  )
     AND m.state = 'done'
+ --   AND (whs.id != 0 AND  whd.id != 0)
+
 );
 """
         self.env.cr.execute(query)
