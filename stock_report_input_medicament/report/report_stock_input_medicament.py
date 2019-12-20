@@ -45,6 +45,15 @@ class WizardReportInputMedicaments(models.Model):
         else:
             return ''
 
+    def _get_unit_price(self, product_id, picking_id):
+
+        seller = product_id._select_seller( partner_id = picking_id.partner_id
+                                        , quantity = 0.0
+                                        , date = picking_id.date_done
+                                        , uom_id = product_id.product_tmpl_id.uom_po_id )
+
+        return (seller.price/product_id.product_tmpl_id.uom_po_id.factor_inv)
+
 
     def action_stock_input_medicament_report(self):
 
@@ -74,6 +83,9 @@ class WizardReportInputMedicaments(models.Model):
                 , 'font_name':'Arial'
                 , 'font_size':'12'})
         style_date = workbook.add_format({'num_format': 'mm/dd/yyyy'
+                , 'font_name':'Arial'
+                , 'font_size':'12'})
+        style_date_1 = workbook.add_format({'num_format': 'mmm - yyyy'
                 , 'font_name':'Arial'
                 , 'font_size':'12'})
 
@@ -127,8 +139,10 @@ class WizardReportInputMedicaments(models.Model):
                         if line.product_id.is_medicament and line.product_id.product_tmpl_id.storage:
                             if line.product_id.product_tmpl_id.storage == 'norm':
                                 product ['product_storage'] = 'Normal de 15ºC a 30ºC. Humedad entre 25% a 70%'
-                            else:
+                            elif line.product_id.product_tmpl_id.storage == 'cold':
                                 product ['product_storage'] = 'Cadena de frío de 2ºC a 8ºC'
+                            else:
+                                product ['product_storage'] = ''
                         else:
                             product ['product_storage'] = ''
 
@@ -138,12 +152,17 @@ class WizardReportInputMedicaments(models.Model):
                             product ['product_prest_ind'] = ''
 
                         product ['product_qty'] = line.qty_done # sm.product_qty
-                        product ['product_price'] = sm.price_unit
+                        product ['product_price'] = self._get_unit_price(line.product_id, rec) #sm.price_unit
 
                         if line.product_id.is_medicament and sml.lot_id.name:
                             product ['prod_lot'] = sml.lot_id.name
                         else:
                             product ['prod_lot'] = ''
+
+                        if line.product_id.is_medicament and sml.lot_id.manufacturing_date:
+                            product ['prod_manufacturing_date'] = sml.lot_id.manufacturing_date
+                        else:
+                            product ['prod_manufacturing_date'] = ''
 
                         if line.product_id.is_medicament and sml.lot_id.cums_consecutive:
                             product ['prod_cums_cons'] = sml.lot_id.cums_consecutive
@@ -177,6 +196,7 @@ class WizardReportInputMedicaments(models.Model):
                     custom_value ['date_done'] = sm.picking_id.date_done
                     custom_value ['partner_no'] = sm.picking_id.name
                     custom_value ['order'] = sm.origin
+                    custom_value ['reference'] = sm.picking_id.name
 
                     if sm.picking_id.vendor_remission_date:
                         custom_value ['vender_invo_date'] = sm.picking_id.vendor_remission_date
@@ -240,11 +260,15 @@ class WizardReportInputMedicaments(models.Model):
                 , row_num + 7, 13
                 , 'Fecha de generación'
                 , style_title)
-            sheet.write(row_num + 7, 14, (fields.Datetime.now()).strftime('%d/%m/%Y'), style_date)
+            sheet.merge_range(row_num + 8, 12
+                , row_num + 8, 13
+                , 'Referencia'
+                , style_title)
+            sheet.write(row_num + 8, 14, custom_value ['reference'] , style_text)
 
             sheet.write(row_num + 8, 0, 'Proveedor', style_title)
             sheet.write(row_num + 8, 1,  custom_value['partner_id'], style_text)
-            sheet.write(row_num + 8, 6, 'Fecha', style_text)
+            sheet.write(row_num + 8, 6, 'Fecha', style_title)
             sheet.write(row_num + 8, 7,  custom_value['date_done'], style_date)
 
             sheet.write(row_num + 10,  0, 'Fecha de llegada', style_title)
@@ -271,13 +295,14 @@ class WizardReportInputMedicaments(models.Model):
             sheet.write(row_num + 12, 11, 'Concentración', style_title)
             sheet.write(row_num + 12, 12, 'Lote', style_title)
             sheet.write(row_num + 12, 13, 'Registro Invima', style_title)
-            sheet.write(row_num + 12, 14, 'CUMS', style_title)
-            sheet.write(row_num + 12, 15, 'Consecutivo CUMS', style_title)
-            sheet.write(row_num + 12, 16, 'Grupo', style_title)
-            sheet.write(row_num + 12, 17, 'Almacenaje', style_title)
-            sheet.write(row_num + 12, 18, 'Fecha de vencimiento', style_title)
-            sheet.write(row_num + 12, 19, 'Semáforo', style_title)
-            sheet.write(row_num + 12, 20, 'Se acepta', style_title)
+            sheet.write(row_num + 12, 14, 'Fecha de Fabricación', style_title)
+            sheet.write(row_num + 12, 15, 'CUMS', style_title)
+            sheet.write(row_num + 12, 16, 'Consecutivo CUMS', style_title)
+            sheet.write(row_num + 12, 17, 'Grupo', style_title)
+            sheet.write(row_num + 12, 18, 'Almacenaje', style_title)
+            sheet.write(row_num + 12, 19, 'Fecha de vencimiento', style_title)
+            sheet.write(row_num + 12, 20, 'Semáforo', style_title)
+            sheet.write(row_num + 12, 21, 'Se acepta', style_title)
 
             # DATOS
             n = row_num + 13
@@ -295,19 +320,18 @@ class WizardReportInputMedicaments(models.Model):
                     sheet.write(n, 11, product ['product_concent'], style_text)
                     sheet.write(n, 12, product ['prod_lot'], style_text)
                     sheet.write(n, 13, product ['prod_invima'], style_text)
-                    sheet.write(n, 14, product ['prod_cums_cod'], style_text)
-                    sheet.write(n, 15, product ['prod_cums_cons'], style_text)
-                    sheet.write(n, 16, product ['product_group'], style_text)
-                    sheet.write(n, 17, product ['product_storage'], style_text)
-                    sheet.write(n, 18, product ['prod_date_end_life'], style_date)
+                    sheet.write(n, 14, product ['prod_manufacturing_date'], style_date_1)
+                    sheet.write(n, 15, product ['prod_cums_cod'], style_text)
+                    sheet.write(n, 16, product ['prod_cums_cons'], style_text)
+                    sheet.write(n, 17, product ['product_group'], style_text)
+                    sheet.write(n, 18, product ['product_storage'], style_text)
+                    sheet.write(n, 19, product ['prod_date_end_life'], style_date_1)
 
                     sheet.write(n,  4, custom_value['partner_id'], style_text)
                     sheet.write(n,  5, custom_value ['vender_invo_num'], style_text)
                     sheet.write(n,  6, custom_value ['vender_invo_date'], style_date)
                     sheet.write(n,  8, custom_value ['date_done'], style_date)
 
-                    sheet.write(n, 19, ' ', style_text)
-                    sheet.write(n, 20, ' ', style_text)
                     n += 1
 
                 # OBSERVACION
