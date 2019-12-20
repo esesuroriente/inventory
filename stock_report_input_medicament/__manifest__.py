@@ -4,7 +4,7 @@
 
 {
     'name': 'Report Stock Input Medicament',
-    'version': '13.0.1.0.0-beta.2',
+    'version': '13.0.1.0.0-beta.3',
     'author': 'ESE SURORIENTE CAUCA',
     'license': 'AGPL-3',
     'category': 'Other',
