@@ -260,6 +260,7 @@ class WizardReportInputMedicaments(models.Model):
                 , row_num + 7, 13
                 , 'Fecha de generación'
                 , style_title)
+            sheet.write(row_num + 7, 14, (fields.Datetime.now()).strftime('%d/%m/%Y'), style_date)
             sheet.merge_range(row_num + 8, 12
                 , row_num + 8, 13
                 , 'Referencia'
